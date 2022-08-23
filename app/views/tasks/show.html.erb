@@ -2,4 +2,10 @@
 
 <p> <%= @task.details %> </p>
 
+<%= link_to "Edit this Task", edit_task_path(@task) %>
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete #{@task.title}?"}
+%>
+
 <footer> <%= link_to "Back to Tasks", index_path %> </footer>
